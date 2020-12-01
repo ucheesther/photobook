@@ -1,0 +1,230 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <script src="materialize/js/materialize.min.js"></script>
+    <!-- <link rel="stylesheet" href="materialize/css/font/material-icons.css"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+             
+    <title>My photo book</title>
+
+  
+
+</head>
+<h3 class="center-align">Room1 Photobook</h3>
+<body>
+  <div class="row" id="card" >
+  <div  id="maincontent"></div>
+  </div>
+  
+  <script>
+
+    var template = "";
+fetch('https://my-json-server.typicode.com/ucheesther/fakeserver/db').then(response=> response.json()).then(data=>{
+// console.log(data);
+data.persons.forEach(person => {
+  
+  template+=`<div class="col s12 m6 l3">       
+     <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="${person.imgUrl}">
+          </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">${person.name}<i
+                  class="material-icons right">more_vert</i></span>
+                <p>${person.email}</p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">${person.name}<i class="material-icons right">close</i></span>
+                <p>${person.rank}</p>
+              </div>
+            </div> </div>`
+
+          
+
+});
+document.getElementById('maincontent').innerHTML = eval('`' + template + '`');
+
+});
+
+
+  </script>
+
+<script>fetch('https://my-json-server.typicode.com/ucheesther/fakeserver/db')
+  .then(response => response.json())
+  .then(json => console.log(json))</script>
+
+
+<!-- <script src="script.js"></script> -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!--Compiled and minified Javascript-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+
+
+</body>
+</html>
+          
+
+
+
+
+  
+<!-- <script>fetch('https://my-json-server.typicode.com/ucheesther/fakeserver/db')
+  .then(response => response.json())
+  .then(json => console.log(json))</script>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!--Compiled and minified Javascript-->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html> --> 
+
+ <!-- <div class="row" id="card">
+    <div class="col s12 m6 l3" id="maincontent">
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="https://imgur.com/LHlVJmW.png" >
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Edike Uche<i class="material-icons right">more_vert</i></span>
+          <p>Fullstack Developer</p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Edike Uche<i class="material-icons right">close</i></span>
+          <p>Fullstack Developer</p>
+        </div>
+      </div>
+    </div>
+ 
+
+
+
+    <div class="col s12 m6 l3">
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="https://imgur.com/RHbbbsw.png">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Green Oluwakemi<i class="material-icons right">more_vert</i></span>
+          <p>Fullstack Developer</p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Green Oluwakemi<i class="material-icons right">close</i></span>
+          <p>Fullstack Developer</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l3">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="https://imgur.com/9uaWwcU.png">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Ayomide Olaniran<i class="material-icons right">more_vert</i></span>
+              <p>Frontend Developer</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Ayomide Olaniran<i class="material-icons right">close</i></span>
+              <p>Frontend Developer</p>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="col s12 m6 l3">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="https://imgur.com/7aFegrr.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Obikwelu Irene<i class="material-icons right">more_vert</i></span>
+                  <p>Frontend Developer</p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Obikwelu Irene Ogechukwu<i class="material-icons right">close</i></span>
+                  <p>Frontend Developer</p>
+                </div>
+              </div>
+            </div>
+         
+ 
+</div>
+        
+      <div class="row" id="card1">
+        <div class="col s12 m6 l3">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="https://imgur.com/FTXk6gA.png">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Mercy Kalu<i class="material-icons right">more_vert</i></span>
+              <p>Backend Developer</p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Mercy Kalu<i class="material-icons right">close</i></span>
+              <p>Backend developer</p>
+            </div>
+          </div>
+        </div>
+     
+    
+    
+    
+        <div class="col s12 m6 l3">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="https://imgur.com/khbIGH2.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Tolulope Ambali<i class="material-icons right">more_vert</i></span>
+                  <p>Content Writer/Frontend Developer</p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Tolulope Ambali<i class="material-icons right">close</i></span>
+                  <p>Content  Writer / Frontend Developer</p>
+                </div>
+              </div>
+            </div>
+     
+            <div class="col s12 m6 l3">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="https://imgur.com/TOQP7kh.png">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title activator grey-text text-darken-4">Temitope Agbaje<i class="material-icons right">more_vert</i></span>
+                      <p>Frontend Developer</p>
+                    </div>
+                    <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">Temitope Agbaje<i class="material-icons right">close</i></span>
+                      <p>Frontend Developer</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col s12 m6 l3">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="https://imgur.com/aStwx7h.png">
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title activator grey-text text-darken-4">Abiona Quadrat Adewemimo<i class="material-icons right">more_vert</i></span>
+                          <p>Biochemist/Backend Developer</p>
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4">Abiona Quadrat Adewemimo<i class="material-icons right">close</i></span>
+                          <p>Biochemist/Backend Developer</p>
+                        </div>
+                      </div>
+                    </div>
+    </div> -->
+
+    
